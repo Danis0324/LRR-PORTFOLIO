@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0e0b10" />
+    <meta name="description" content="林瑞如 · 平面视觉设计师 — 黑粉科技风作品集:封面 / 个人介绍 / 平面设计 / IP&UI / 产品设计 / 包装设计。" />
+    <style>
+      /* 首帧兜底：在 React 挂载并归零滚动前，页面整体不绘制，只露暗色底，避免恢复旧滚动位置时闪出介绍背景图。 */
+      html { background: #0a070c; }
+      body { background: #0a070c; }
+      #root { visibility: hidden !important; }
+      #root.app-ready { visibility: visible !important; }
+    </style>
+    <script>
+      /* 最早同步执行：关掉滚动恢复并立即归零（behavior 必须是 auto，instant 是无效值会抛异常）。 */
+      if ('scrollRestoration' in history) history.scrollRestoration = 'manual';
+      try { window.scrollTo(0, 0); } catch (e) {}
+    </script>
+    <title>林瑞如 · Content Visual Designer</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
